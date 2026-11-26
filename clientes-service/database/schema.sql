@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS bd_clientes;
+USE bd_clientes;
+
+CREATE TABLE IF NOT EXISTS clientes (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  cpf CHAR(11) NOT NULL UNIQUE,
+  email VARCHAR(100),
+  telefone VARCHAR(20)
+);
