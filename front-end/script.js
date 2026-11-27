@@ -1,8 +1,15 @@
-const API = {
-  clientes: "http://localhost:3002/clientes",
-  veiculos: "http://localhost:3003/veiculos",
-  alugueis: "http://localhost:3004/alugueis" 
-};
+const LOCAL = ["localhost", "127.0.0.1"].includes(location.hostname);false
+const API = LOCAL
+  ? {
+      clientes: "http://localhost:3002/clientes",
+      veiculos: "http://localhost:3003/veiculos",
+      alugueis: "http://localhost:3004/alugueis"
+    }
+  : {
+      clientes: "https://clientes-service-production-4bb01a11.up.railway.app/clientes",
+      veiculos: "https://veiculos-service-production.up.railway.app/veiculos",
+      alugueis: "https://ENDERECO-DO-KEVIN.up.railway.app/alugueis"
+    };
 
 const ALUGUEL = {
   criar: d => ({
